@@ -111,7 +111,8 @@ const Board = ({ boardSize, mineNum, backToHome }) => {
         <div className='boardPage' >
             <div className='boardWrapper' >
                 {/* Advanced TODO: Implement Modal based on the state of `gameOver` */}
-
+                {gameOver&&<Modal restartGame={restartGame} backToHome={backToHome} win={false}></Modal>
+                }
                 {/* Basic TODO: Implement Board 
                 Useful Hint: The board is composed of BOARDSIZE*BOARDSIZE of Cell (2-dimention). So, nested 'map' is needed to implement the board.
                 Reminder: Remember to use the component <Cell> and <Dashboard>. See Cell.js and Dashboard.js for detailed information. */}

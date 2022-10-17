@@ -38,7 +38,7 @@ const MineSweeper = () => {
 
     // Advanced TODO: Change `startGame` from true to false when this function is called
     const backToHomeOnClick = () => {
-        
+        setStartGame(false);
     }
     let ret = startGame? <Board boardSize={boardSize} mineNum={mineNum} backToHome={backToHomeOnClick}></Board> : <HomePage startGameOnClick={startGameOnClick} mineNumOnChange={mineNumOnChange} boardSizeOnChange={boardSizeOnChange} mineNum={mineNum} boardSize={boardSize}></HomePage>;
     return (
