@@ -17,9 +17,10 @@ function App() {
       setNumber('')
     }
   }
-  const StartGame = () => {
-    startGame()
-    setHasStarted(true)
+  const StartGame = async() => {
+    const response = await startGame()
+    if(response === "The game has started.")
+      setHasStarted(true)
   }
   const Restart = async() => {
     setHasWon(false)
