@@ -49,7 +49,7 @@ router.delete('/cards', async (_, res) => {
 })
 
 router.get('/',(_, res) => {
-	res.send('this is my backend!!!')
+	res.send('yoyoyo')
 })
 
 export default router;
