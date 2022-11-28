@@ -1,1 +1,1 @@
-# Web Programming HW#7
+# 有完成過半的基礎要求，因 backend 的最後一步沒完成，因此復原到只有 frontend 完美的部分，不然會什麼都跑不出來。希望能 PASS 拜託
