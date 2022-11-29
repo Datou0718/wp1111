@@ -15,7 +15,14 @@ exports.GetCommentsByRestaurantId = async (req, res) => {
     const id = req.query.restaurantId
     /****************************************/
     // TODO Part III-3-a: find all comments to a restaurant
-
+    Comment.find({restaurantId: id}).exec((err, data) => {
+        if(err){
+            res.status(403).send({message: 'error', contents: 'no comment found.'})
+        }
+        else{
+            res.status(200).send({message: 'success', contents: data})
+        }
+    })
     // NOTE USE THE FOLLOWING FORMAT. Send type should be 
     // if success:
     // {
@@ -34,4 +41,5 @@ exports.CreateComment = async (req, res) => {
     const body = req.body
     /****************************************/
     // TODO Part III-3-b: create a new comment to a restaurant
+    
 }

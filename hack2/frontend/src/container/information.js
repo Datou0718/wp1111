@@ -16,6 +16,9 @@ const Information = ({ info, rating }) => {
         return (
             <>
                 {/* TODO Part III-2-a render tags */}
+                {tags.map((i) => (
+                    <div className='tag' key={i}>{i}</div>
+                ))}
             </>
         )
     }
@@ -26,15 +29,52 @@ const Information = ({ info, rating }) => {
         return (
             <>
                 {/* TODO Part III-2-a render price tags; hint: convert price number to dollar signs first */}
+                <div className='tag' key={priceText}>{priceText}</div>
             </>
         )
     }
 
     const getBusiness = (time) => {
-        
+        if(time.All){
+            time.Mon = time.All
+            time.Tue = time.All
+            time.Wed = time.All
+            time.Thr = time.All
+            time.Fri = time.All
+            time.Sat = time.All
+            time.Sun = time.All
+        }
         return (
             <div className='businessTime'>
-                {/* TODO Part III-2-c: render business time for each day*/}
+                {/* TODO Part III-2-c: render business time for each day*/}         
+                <div className='singleDay'>
+                    <div className='day'>Mon</div>
+                    <div className='time'>{time.Mon? time.Mon : "Closed"}</div>
+                </div>
+                <div className='singleDay'>
+                    <div className='day'>Tue</div>
+                    <div className='time'>{time.Tue? time.Tue : "Closed"}</div>
+                </div>
+                <div className='singleDay'>
+                    <div className='day'>Wed</div>
+                    <div className='time'>{time.Wed? time.Wed : "Closed"}</div>
+                </div>
+                <div className='singleDay'>
+                    <div className='day'>Thr</div>
+                    <div className='time'>{time.Thr? time.Thr : "Closed"}</div>
+                </div>
+                <div className='singleDay'>
+                    <div className='day'>Fri</div>
+                    <div className='time'>{time.Fri? time.Fri : "Closed"}</div>
+                </div>
+                <div className='singleDay'>
+                    <div className='day'>Sat</div>
+                    <div className='time'>{time.Sat? time.Sat : "Closed"}</div>
+                </div>
+                <div className='singleDay'>
+                    <div className='day'>Sun</div>
+                    <div className='time'>{time.Sun? time.Sun : "Closed"}</div>
+                </div>
             </div>
         )
     }
