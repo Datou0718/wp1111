@@ -15,7 +15,6 @@ function Analytics() {
       { 
         // TODO 2.3 Add Balence and Category (uncomment the following code)
       }
-      <p>haha</p>
       <div className="col-span-6">
         <Balance items={items} />
       </div>
