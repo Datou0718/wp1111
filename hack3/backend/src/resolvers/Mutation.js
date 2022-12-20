@@ -35,6 +35,13 @@ const Mutation = {
     return newItem;
   },
   // TODO 5.2 Define the itemDelete mutation resolver
+  deleteItem: async(parent, {input}, {itemModel, pubSub}) => {
+    const item = await itemModel.findOne({id: input}, )
+    pubSub.publish("ITEM_DELETED", {
+      itemUpdated: input,
+    });
+    return input;
+  }
   // TODO 6.3 Publish itemDeleted
 
   // TODO 5.2 End
