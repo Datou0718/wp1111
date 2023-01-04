@@ -6,7 +6,6 @@
 
 - https://youtu.be/WtA7uUGoXvw
 - https://drive.google.com/file/d/1KTXN7gP_SFMYQnwzEqC4-Iq5DOMPBfZH/view?usp=sharing
-- 建議使用 youtube 畫質較高
 
 **Deploy 連結:**
 
