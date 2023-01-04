@@ -1,14 +1,19 @@
-import dotenv from 'dotenv-defaults';
-import db from './db'
-import routes from './routes/index';
-import cors from 'cors';
 import express from 'express';
-import bodyParser from 'body-parser';
+import cors from 'cors';
+
+import mongo from './mongo.js'
+import routes from './routes/index.js'; 
 import path from "path"
 const app = express();
+
+// init middleware
 app.use(cors());
-app.use(bodyParser.json());
-app.use('/',routes);
+app.use(express.json());
+
+// define routes
+app.use('/', routes);
+
+// deploy
 if(process.env.NODE_ENV === "production"){
     const __dirname = path.resolve();
     app.use(express.static(path.join(__dirname, "../frontend", "build")))
@@ -16,9 +21,9 @@ if(process.env.NODE_ENV === "production"){
         res.sendFile(path.join(__dirname, "../frontend", "build", "index.html"))
     })
 }
-dotenv.config();
-db.connect();
-const port = process.env.PORT || 4000
-app.listen(port, () => {
-    console.log(`Server is up on port ${port}.`)
-})
+
+// define server
+const port = process.env.PORT || 4000;
+app.listen(port, () => {console.log(`Server is up on port ${port}.`)});
+
+mongo.connect();
